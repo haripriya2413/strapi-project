@@ -9,17 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18.x'
-
       - name: Install dependencies
-        run: npm install 
+        run: npm install
 
-      - name: Build Strapi project
+      - name: Build Strapi
         run: npm run build
 
       - name: Deploy to EC2
@@ -35,7 +28,7 @@ jobs:
             ./generate_env_variables.sh
             npm install
             npm run build
-            pm2 restart "strapi-project"  || pm2 start npm --name "strapi-project" -- run start
+            pm2 start npm --name "strapi-project" -- run start" || pm2 restart "strapi-project" 
 
             
-          
+        
