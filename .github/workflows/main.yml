@@ -30,10 +30,8 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Update your package list
-            sudo apt-get update
-            git clone https://github.com/haripriya2413/strapi-project.git
-            cd strapi-project
+           
+            cd /home/ubuntu/strapi-project
             sudo npm install -g pm2
             chmod +x  generate_env_variables.sh
             ./generate_env_variables.sh
