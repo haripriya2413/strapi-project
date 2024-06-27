@@ -34,6 +34,7 @@ jobs:
             sudo apt-get update
             git clone https://github.com/haripriya2413/strapi-project.git
             cd strapi-project
+            npm install
             pm2 restart "strapi-project"  || pm2 start npm --name "strapi-project" -- run start
 
             
