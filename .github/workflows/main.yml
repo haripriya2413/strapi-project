@@ -23,13 +23,12 @@ jobs:
         run: npm run build
 
       - name: Deploy to EC2
-        uses: appleboy/ssh-action@v0.1.7
+        uses: appleboy/ssh-action@main
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          script: | 
+          script: |
             # Update your package list
             cd /home/ubuntu/strapi-project
             #sudo npm install -g pm2
