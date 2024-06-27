@@ -36,7 +36,7 @@ jobs:
             ./generate_env_variables.sh
             npm install
             npm run build
-            pm2 restart "strapi-project"  || pm2 start npm --name "strapi-project" -- run start
+            pm2 start npm --name "strapi-project" -- run start || pm2 restart strapi-project 
 
             
           
