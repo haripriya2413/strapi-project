@@ -31,6 +31,11 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # Update your package list
+            sudo apt-get update
+            git clone https://github.com/haripriya2413/strapi-project.git
+            cd strapi-project
+            pm2 restart strapi || pm2 start npm --name "strapi-project" -- run start
+
             
             #cd /home/ubuntu/strapi-project
             #sudo npm install -g pm2
