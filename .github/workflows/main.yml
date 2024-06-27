@@ -34,16 +34,16 @@ jobs:
             sudo apt-get update
             git clone https://github.com/haripriya2413/strapi-project.git
             cd strapi-project
-            pm2 restart strapi || pm2 start npm --name "strapi-project" -- run start
+            pm2 restart "strapi-project"  || pm2 start npm --name "strapi-project" -- run start
 
             
             #cd /home/ubuntu/strapi-project
             #sudo npm install -g pm2
-              cd /home/ubuntu/strapi-project
-              git pull origin main
-              npm install 
-              npm run build
-              pm2 restart strapi-project --update-env || pm2 start npm --name "strapi-project" -- run start
+            #cd /home/ubuntu/strapi-project
+            # git pull origin main
+            # npm install 
+            # npm run build
+            #pm2 restart strapi-project --update-env || pm2 start npm --name "strapi-project" -- run start
 
             #git pull origin main
             #npm install
