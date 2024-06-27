@@ -35,6 +35,7 @@ jobs:
             chmod +x  generate_env_variables.sh
             ./generate_env_variables.sh
             npm install
+            npm run build
             pm2 restart "strapi-project"  || pm2 start npm --name "strapi-project" -- run start
 
             
