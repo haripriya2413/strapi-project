@@ -30,6 +30,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/ubuntu/strapi-project
+            sudo git pull origin main
             sudo npm install -g pm2
             #chmod +x  generate_env_variables.sh
             #./generate_env_variables.sh
