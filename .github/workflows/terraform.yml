@@ -3,7 +3,7 @@ name: CD Pipeline
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
       run: |
         docker build -t priya247/mystrapi247:latest .
         docker push priya247/mystrapi247:latest
-        
+  
   deploy:
     needs: build
     runs-on: ubuntu-latest
