@@ -52,10 +52,10 @@ jobs:
           aws-region: us-east-1
       - name: Initialize Terraform
         run: terraform init
-        working-directory: .  # Update this path if necessary
+        working-directory: ./terraform  # Update this path if necessary
 
       - name: Apply Terraform
         run: terraform apply -auto-approve -var="private_key_path=/home/runner/.ssh/devops.pem"
-        working-directory: .  # Update this path if necessary
+        working-directory: ./terraform  # Update this path if necessary
     
      
