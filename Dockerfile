@@ -2,8 +2,7 @@ FROM node:18-alpine
 
 WORKDIR /usr/src/app
 
-# Install PM2 globally
-RUN npm install -g pm2
+RUN npm install -g strapi@latest
 
 COPY package*.json ./
 
@@ -13,5 +12,4 @@ COPY . .
 
 EXPOSE 1337
 
-# Run Strapi with PM2
-CMD ["pm2-runtime", "start", "npm", "--", "start"]
+CMD ["npm", "run", "start"]
