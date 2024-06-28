@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 RUN npm install -g pm2
 
 # Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY package*.json package-lock.json ./
 
 # Install Strapi and dependencies
 RUN npm install
@@ -14,6 +14,7 @@ RUN npm install
 # Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
+RUN npm run build
 # Expose the port that Strapi runs on
 EXPOSE 1337
 
