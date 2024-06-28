@@ -21,8 +21,8 @@ jobs:
 
     - name: Build and Push Docker image
       run: |
-        docker build -t priya247/mystrapi247:latest .
-        docker push priya247/mystrapi247:latest
+        docker build -t priya247/strapidocker:latest .
+        docker push priya247/strapidocker:latest
   
   deploy:
     needs: build
