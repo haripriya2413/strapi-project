@@ -57,7 +57,7 @@ resource "aws_instance" "strapi" {
   ami           = data.aws_ami.ubuntu.id
   #ami           = var.ami  # Ubuntu 20.04 LTS AMI
   instance_type = var.instance_type
-  key_name      = "devops"
+  key_name      = var.key_pair
     tags = {
         Name = "Strapi-Instance"
      }
