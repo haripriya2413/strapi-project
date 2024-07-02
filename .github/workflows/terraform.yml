@@ -40,7 +40,7 @@ jobs:
         run: |
           mkdir -p /home/runner/.ssh
           echo "${{ secrets.HARIPRIYA_EC2_KEY }}" > /home/runner/.ssh/devops.pem
-          chmod 600 /home/runner/.ssh/devops.pem
+          chmod 600 /home/runner/.ssh/haripriya.pem
           ls -al /home/runner/.ssh  # Verify permissions and existence
           
       - name: Configure AWS Credentials
@@ -54,6 +54,6 @@ jobs:
         working-directory: ./terraform  # Update this path if necessary
 
       - name: Apply Terraform
-        run: terraform apply -auto-approve -var="private_key_path=/home/runner/.ssh/devops.pem"
+        run: terraform apply -auto-approve -var="private_key_path=/home/runner/.ssh/haripriya.pem"
         working-directory: ./terraform  # Update this path if necessary
      
