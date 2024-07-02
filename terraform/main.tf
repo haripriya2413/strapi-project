@@ -4,8 +4,8 @@ variable "private_key_path" {
   type        = string
 }
 
-resource "aws_security_group" "strapi-sg" {
-  name        = "strapi-priya-sg"
+resource "aws_security_group" "strapi-sg1" {
+  name        = "strapi-priya-sg1"
   description = "Allow SSH and HTTP traffic"
 
   ingress {
@@ -84,5 +84,5 @@ provisioner "remote-exec" {
     host        = self.public_ip
   }
  
-  security_groups = [aws_security_group.strapi-sg.name]
+  security_groups = [aws_security_group.strapi-sg1.name]
 }
