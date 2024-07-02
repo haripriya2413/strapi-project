@@ -5,7 +5,7 @@ variable "private_key_path" {
 }
 
 resource "aws_security_group" "strapi-sg" {
-  name        = "strapi-sg"
+  name        = "strapi-priya-sg"
   description = "Allow SSH and HTTP traffic"
 
   ingress {
@@ -59,7 +59,7 @@ resource "aws_instance" "strapi" {
   instance_type = var.instance_type
   key_name      = var.key_pair
     tags = {
-        Name = "Strapi-Instance"
+        Name = "Priya-Strapi-Instance"
      }
 
   
@@ -72,7 +72,7 @@ provisioner "remote-exec" {
       "sudo usermod -aG docker ubuntu",
       "sudo chmod 666 /var/run/docker.sock",
       #"docker pull priya247/${var.docker_image}",  # Replace with your Docker image
-      "docker run -d -p 80:80 -p 1337:1337 priya247/strapidocker:latest"  
+      "docker run -d -p 1337:1337 priya247/strapidocker:latest"  
 
             
     ]
